@@ -8,7 +8,7 @@ function Trips() {
   useEffect(() => {
     async function fetchData() {
       const result = await axios(
-        'https://api-v3.mbta.com/trips?sort=headsign&filter%5Broute%5D=Red%2C%20Blue%2C%20Orange',
+        'https://api-v3.mbta.com/trips?sort=headsign&filter%5Broute%5D=Red%2C%20Blue',
       );
       setTrips(result.data.data);
     }
@@ -28,6 +28,8 @@ function Trips() {
         <Card.Body>
         <Card.Title>Trip</Card.Title>
         <Card.Text>{trip.attributes.header}{trip.attributes.description}</Card.Text>
+        <Card.Text>Block ID: {trip.attributes.block_id} | |  Direction: {trip.attributes.direction_id}</Card.Text>
+        <Card.Text>Headsign: {trip.attributes.headsign} | |  Wheelchair Accessible: {trip.attributes.wheelchair_accessible}</Card.Text>
         </Card.Body>
       </Card>
       ))}
