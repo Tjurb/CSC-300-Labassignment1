@@ -30,6 +30,7 @@ function Trips() {
         <Card.Text>{trip.attributes.header}{trip.attributes.description}</Card.Text>
         <Card.Text>Block ID: {trip.attributes.block_id}  | |   Direction: {trip.attributes.direction_id}</Card.Text>
         <Card.Text>Headsign: {trip.attributes.headsign}  | |   Wheelchair Accessible: {trip.attributes.wheelchair_accessible}</Card.Text>
+        <Card.Text>Route: {trip.relationships.route.data.id}</Card.Text>
         </Card.Body>
       </Card>
       ))}
